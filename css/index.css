@@ -26,6 +26,11 @@ img {
   height: auto;
 }
 
+.header .wrap {
+  display: flex;
+  border-top: 4px solid #3e3a39;
+}
+
 .header .contact img {
   display: inline-block;
   width: 2.5rem;
@@ -37,31 +42,55 @@ img {
   height: 4rem;
 }
 
-.header .wallet img {
-  width: 1.5rem;
+.header .subscribe img {
+  display: inline-block;
+  height: 1rem;
 }
 
-.nav .container {
-  padding: 0 3rem;
-  border-top: 3px solid #3e3a39;
+.header .contact,
+.header .subscribe {
+  flex: 1;
+  display: flex;
+  height: 4rem;
+  align-items: center;
   border-bottom: 3px solid #3e3a39;
 }
 
-.nav .container div + div {
-  border-left: 3px solid #3e3a39;
+.header .subscribe {
+  justify-content: flex-end;
 }
 
-.nav .container .wrap div a {
-  display: inline-block;
-  color: #3e3a39;
-  font-weight: bold;
-  padding: 0.25rem 3rem;
-  margin: 0 0.5rem;
-  border-radius: 0.25rem;
-}
-.nav .container .wrap div a.active {
+.header .subscribe a {
+  display: flex;
+  padding: 0.25rem 0.5rem;
   background-color: #3e3a39;
   color: #fff;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.header .subscribe a img {
+  height: 1rem;
+  width: auto;
+  margin-right: 0.25rem;
+}
+
+.header .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0 1rem;
+}
+
+.header .logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.header .logo div {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .menu {
@@ -139,6 +168,15 @@ img {
   padding: 0.125rem 0.25rem;
 }
 
+.main .left,
+.main .right {
+  width: 30%;
+}
+
+.main .center {
+  width: 40%;
+}
+
 .main .new-1 > * {
   padding: 0.25rem;
 }
@@ -149,16 +187,12 @@ img {
   font-weight: bold;
 }
 
-.main .new-2 .wrap {
-  display: flex;
-}
-
 .main .new-2 .wrap > div {
   flex: 1;
 }
 
 .main .new-2 img {
-  width: 100%;
+  width: 60%;
 }
 
 .main .new-2 .title {
@@ -177,6 +211,7 @@ img {
 }
 
 .main .new-3 .must-read {
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
@@ -200,36 +235,54 @@ img {
   font-weight: bold;
 }
 
-.main .lp .title {
+.main .new-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .new-3 .content {
+  flex: 1;
+}
+
+.main .new-3 .read-more {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(62 58 57 / 20%);
+}
+
+.main .new-4 {
+  border: 2px solid #3e3a39;
+}
+
+.main .new-4 .title {
   font-size: 1.5rem;
   line-height: 1;
   font-weight: bold;
+  padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.main .lp .join {
+.main .new-4 .join {
   text-align: right;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   background: #2a2525;
-  border-radius: 0 0 5px 5px;
 }
 
-.main .lp .join a {
+.main .new-4 .join a {
   color: #fff;
 }
 
 .main .parters {
   margin-top: 0.5rem;
+  border: 2px solid #3e3a39;
 }
 
-.main .parters .title1 {
-  font-size: 1.75rem;
-  line-height: 1;
-  font-weight: bold;
-}
-
-.main .parters .title2 {
+.main .parters .title {
+  padding: 0.5rem;
+  text-align: center;
   font-size: 2rem;
   line-height: 1;
   font-weight: bold;
@@ -238,30 +291,27 @@ img {
 .main .parters .h1 {
   height: 2px;
   width: 100%;
-  margin-top: 0.5rem;
   margin-bottom: 0;
   background-color: #2a2525;
 }
 .main .parters .h2 {
   height: 3px;
   width: 100%;
+  margin: 0;
   margin-top: 3px;
   background-color: #2a2525;
 }
 
-.main .parters .logo {
-  background: #2c2c2c;
-}
-
 .main .parters .logo div {
-  display: inline-flex;
   align-items: center;
-  width: 49%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
 }
 
 .main .parters .logo div img {
-  width: 98%;
+  width: auto;
   height: auto;
 }
 
@@ -314,14 +364,22 @@ img {
 }
 
 @media (max-width: 998px) {
-  .header {
-    display: none;
+  .header .wrap {
+    flex-direction: column;
   }
-  .nav {
-    display: none;
+  .header .contact,
+  .header .subscribe {
+    flex-basis: auto;
+    justify-content: center;
   }
-  .menu {
-    display: block;
+
+  .main .left,
+  .main .right {
+    width: 100%;
+  }
+
+  .main .center {
+    width: 100%;
   }
 }
 
