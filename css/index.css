@@ -34,7 +34,7 @@ img {
 .header .contact img {
   display: inline-block;
   width: 2.5rem;
-  margin-right: 0.25rem;
+  margin-right: 12px;
 }
 
 .header .logo img {
@@ -89,6 +89,7 @@ img {
 }
 
 .header .logo div {
+  font-family: Times;
   margin-top: 0.5rem;
   font-size: 1.5rem;
 }
@@ -137,7 +138,10 @@ img {
 }
 
 .market .container {
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden;
+  border-top: 3px solid #3e3a39;
   border-bottom: 3px solid #3e3a39;
 }
 
@@ -171,6 +175,8 @@ img {
 .main .left,
 .main .right {
   width: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
 .main .center {
@@ -185,6 +191,16 @@ img {
   font-size: 2rem;
   line-height: 1;
   font-weight: bold;
+}
+
+.main .new-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main .new-2 .wrap {
+  flex: 1;
 }
 
 .main .new-2 .wrap > div {
@@ -211,7 +227,6 @@ img {
 }
 
 .main .new-3 .must-read {
-  margin: 0.5rem 0;
   display: flex;
   align-items: center;
 }
@@ -261,11 +276,17 @@ img {
   line-height: 1;
   font-weight: bold;
   padding: 0.5rem;
+}
+
+.main .new-4 .text {
+  padding: 0.5rem 15px;
   margin-bottom: 0.5rem;
 }
 
 .main .new-4 .join {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   background: #2a2525;
@@ -275,12 +296,18 @@ img {
   color: #fff;
 }
 
-.main .parters {
+.main .new-4 .join img {
+  width: 1.75rem;
+  height: auto;
+}
+
+.main .partners {
+  flex: 1;
   margin-top: 0.5rem;
   border: 2px solid #3e3a39;
 }
 
-.main .parters .title {
+.main .partners .title {
   padding: 0.5rem;
   text-align: center;
   font-size: 2rem;
@@ -288,13 +315,13 @@ img {
   font-weight: bold;
 }
 
-.main .parters .h1 {
+.main .partners .h1 {
   height: 2px;
   width: 100%;
   margin-bottom: 0;
   background-color: #2a2525;
 }
-.main .parters .h2 {
+.main .partners .h2 {
   height: 3px;
   width: 100%;
   margin: 0;
@@ -302,17 +329,17 @@ img {
   background-color: #2a2525;
 }
 
-.main .parters .logo div {
+.main .partners .logo div {
   align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  margin: 1.5rem 0;
 }
 
-.main .parters .logo div img {
+.main .partners .logo div img {
   width: auto;
-  height: auto;
+  max-width: 90%;
 }
 
 .footer .container {
@@ -371,6 +398,13 @@ img {
   .header .subscribe {
     flex-basis: auto;
     justify-content: center;
+    border-bottom: none;
+  }
+  .header .logo {
+    margin: 0;
+  }
+  .header .logo img {
+    max-width: 100%;
   }
 
   .main .left,

@@ -21,23 +21,41 @@ function start() {
 }
 
 function getMarket() {
-  $.get('/api/market/latest', function (res, status) {
-    console.log(res)
-    if (res.code == 200) {
-      const { data } = res
-      let htmlString = ''
-      for (let index = 0; index < data.length; index++) {
-        const item = data[index]
-        htmlString += `
-          <div class="coin">${
-            item.symbol
-          } <span>$${item.quote.USD.price.toFixed(2)}</span></div>
-        `
+  $.get(
+    'https://www.xplanet.io/api/market/latestByCoin',
+    function (res, status) {
+      console.log(res)
+      if (res.code == 200) {
+        let sortArr = [
+          'ETH',
+          'UNI',
+          'LINK',
+          'MATIC',
+          'AAVE',
+          'MKR',
+          'COMP',
+          'SNX',
+          'YFI',
+          'SUSHI'
+        ]
+        const { data } = res
+        let htmlString = ''
+
+        for (let index = 0; index < sortArr.length; index++) {
+          const item = data[sortArr[index]]
+          if (item) {
+            htmlString += `
+              <div class="coin">
+                ${item.symbol}
+              <span>$${item.quote.USD.price.toFixed(2)}</span></div>
+            `
+          }
+        }
+        $('#marketConttent').html(htmlString)
+        setTimeout(start, seconds)
       }
-      $('#marketConttent').html(htmlString)
-      setTimeout(start, seconds)
     }
-  })
+  )
 }
 
 $('#open').on({
